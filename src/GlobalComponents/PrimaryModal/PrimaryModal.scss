@@ -1,0 +1,92 @@
+@import "../../Utils/_variables.scss";
+
+.Overlay {
+    cursor: pointer;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    backdrop-filter: blur(2px);
+    background: rgba(0, 0, 0, 0.4);
+    animation: OverlayFadeIn 0.15s ease-in-out;
+}
+
+.PrimaryModal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40vw;
+    transform: translate(-50%, -50%);
+    user-select: none;
+    height: min-content;
+    border-radius: 0.75em;
+    color: $TextColor;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+    background: $ButtonBorderColor;
+    z-index: 100000;
+    animation: ModalFadeIn 0.15s ease-in-out;
+}
+.PrimaryModal .ModalHeader {
+    position: relative;
+    margin-bottom: 0 !important;
+    padding: 0.4em;
+    font-size: 1.5rem !important;    
+    text-align: center;
+    border-radius: 0.75rem 0.75rem 0 0;
+    color: $TextColor;
+    background: $PanelGradient;
+}
+.PrimaryModal .ModalHeader span {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: calc(10px - 0.5rem);
+    font-weight: bold;
+    font-size: 1.65rem !important;
+    text-transform: lowercase;
+    color: $SecondaryBorderColor;
+    transition: color 0.15s ease-in-out;
+}
+.PrimaryModal .ModalHeader span:hover {
+    color: lighten($SecondaryBorderColor, 20);
+}
+
+.ModalContentContainer {
+    padding: 0 20px 20px;
+}
+.ModalContent {
+    max-height: 70vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes OverlayFadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes ModalFadeIn {
+    from {opacity: 0; transform: translate(-50%, -45%)}
+    to {opacity: 1; transform: translate(-50%, -50%);}
+}
+
+.OverlayFadeOut {
+    opacity: 0;
+    animation: OverlayFadeOut 0.15s ease-in-out;
+}
+@keyframes OverlayFadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+.ModalFadeOut {
+    opacity: 0;
+    transform: translate(-50%, -45%);
+    animation: ModalFadeOut 0.15s ease-in-out;
+}
+@keyframes ModalFadeOut {
+    from {opacity: 1; transform: translate(-50%, -50%);}
+    to {opacity: 0; transform: translate(-50%, -45%)}
+}

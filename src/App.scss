@@ -1,0 +1,217 @@
+@import "./Utils/_variables.scss";
+
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    color: $TextColor;
+    background: radial-gradient(50% 50% at 50% 50%, transparentize($BackgroundColor, 0.1) 0%, $BackgroundColor 100%);
+}
+
+#MainPanel {
+    display: grid;
+    grid-template-columns: 1.36fr 4fr;
+    grid-gap: 40px;
+    gap: 40px;
+    width: 55vw;
+    height: 72.5vh;
+    padding: 20px;
+    border-radius: $BorderRadius;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4), 0px 0px 20px rgba(0, 0, 0, 0.5);
+    background: $PanelGradient;
+}
+
+#BigButtonPanel, #MainContent {
+    display: flex;
+    flex-direction: column;
+}
+
+#MainContent {
+    justify-content: space-between;
+    text-shadow: $TextShadow;
+}
+#MainContent h2 {
+    margin: 0 0 20px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+}
+#MainContent > .PrimaryButton {
+    height: 40.25px;
+}
+
+.RadioButtons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px 40px;
+    width: fit-content;
+}
+
+#SizeSlider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+#SizeSlider .SliderLabel {
+    font-size: 1.15rem;
+    margin-right: 10px;
+}
+
+#ListButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40.25px;
+    margin-bottom: 20px;
+}
+#ListButtons .PrimaryButton {
+    width: 100%;
+}
+#ListButtons .PrimaryButton:first-of-type {
+    margin-right: 40px;
+}
+
+#Results {
+    display: grid;
+    grid-gap: 5px 20px;
+    gap: 5px 20px;
+    grid-template-columns: 1fr 10rem;
+    width: fit-content;
+    margin: auto auto 20px;
+}
+#Results .ResultTitle {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 1.15rem;
+}
+#Results .ResultValue {
+    font-size: 1.05rem;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 2px;
+    border: 2px solid $ButtonBorderColor;
+    border-radius: $BorderRadius;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.ModalContent .ListTitle {
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 1.25rem;
+    margin: 10px 0;
+}
+.ModalContent .List  {
+    padding: 10px;
+    margin: 0;
+    font-size: 1.05rem;
+    overflow-y: auto;
+    border-radius: $BorderRadius;
+    border: 3px solid $SecondaryBorderColor;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.LeaderBoardButtons {
+    display: flex;
+    margin-top: 10px;
+    gap: 10px;
+}
+.LeaderBoardButtons .RadioButton {
+    width: 100%;
+}
+.LeaderBoardButtons .RadioButton .PrimaryButton {
+    padding: 2.5px;
+    width: 100%;
+}
+.LeaderBoardButtons .PrimaryButton {
+    background: $SecondaryBorderColor;
+}
+.LeaderBoardButtons .PrimaryButton button {
+    pointer-events: none;
+    padding: 4px 0;
+    text-transform: capitalize;
+}
+.LeaderBoardButtons input:checked ~ .PrimaryButton button {   
+    text-shadow: $TextShadowHover;
+}
+.DataTypes .PrimaryButton:hover, .DataTypes input:checked ~ .PrimaryButton {
+    background: $AccentGradient;
+}
+.Statistics .PrimaryButton:hover, .Statistics input:checked ~ .PrimaryButton {
+    background: $AccentGradientReverse;
+}
+
+#Rankings {
+    margin: 20px auto 4px;
+    display: grid;
+    font-size: 1.75rem;
+    gap: 20px;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+}
+
+#Rankings .Rank {
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    z-index: 2;
+}
+
+#Rankings .RankName {
+    position: relative;
+}
+#Rankings .RankName .ToolTip {
+    width: auto;
+    height: max-content;
+    margin-top: -2px;
+    padding: 10px;
+    bottom: 100%;
+    font-size: 1rem;
+    text-align: left;
+    text-transform: capitalize;
+    line-height: 1.05rem;
+    white-space: nowrap;
+}
+
+#Rankings .RankNumber {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 3.15rem;
+    height: 3.15rem;
+    margin-right: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3), inset 0px 0px 2px rgba(0, 0, 0, 0.45);
+    background: $PanelGradientReverse;
+}
+#Rankings .RankNumber > div {
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    border: 2px solid $TextColor;
+    border-radius: 50%;
+    box-shadow: 0px 0px 2px $AccentGradientEnd, inset 0px 0px 2px rgba(0, 0, 0, 0.3);
+    background-clip: border-box;
+    background: linear-gradient(to bottom, $PanelGradientStart, $PanelGradientEnd);
+    z-index: 0;
+}
+#Rankings .RankNumber > span {
+    margin-top: -1.5px;
+    z-index: 1;
+}
+#Rankings .RankNumber:first-of-type > span {
+    margin-left: -1.5px;
+}
+
+#Rankings .RankWinner {
+    background: $AccentGradientReverse;
+}
+#Rankings .RankWinner > div {
+    background: linear-gradient(to bottom, $AccentGradientEnd, $AccentGradientStart);
+}

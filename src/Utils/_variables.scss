@@ -1,0 +1,19 @@
+$TextColor: #FFFDFD;
+$ButtonColor: #394655;
+$ButtonBorderColor: #495D6B;
+$SecondaryBorderColor: #7390A5;
+$BackgroundColor: #132A31;
+
+$AccentGradientStart: #56A0C0; 
+$AccentGradientEnd: #6157AB; 
+$PanelGradientStart: #35424F;
+$PanelGradientEnd: #19232B;
+
+$BorderRadius: 10px;
+$TextShadow: 0px 0px 3px rgba(0, 0, 0, 0.5), 0px 0px 6px rgba(0, 0, 0, 0.85);
+$TextShadowHover: 0px 0px 3px #6157AB, 0px 0px 6px rgba(0, 0, 0, 0.85);
+
+$AccentGradient: linear-gradient(to bottom right, $AccentGradientStart, $AccentGradientEnd);
+$AccentGradientReverse: linear-gradient(to bottom right, $AccentGradientEnd, $AccentGradientStart);
+$PanelGradient: linear-gradient(to bottom right, $PanelGradientStart, $PanelGradientEnd);
+$PanelGradientReverse: linear-gradient(to bottom right, $PanelGradientEnd, $PanelGradientStart);

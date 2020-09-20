@@ -1,0 +1,14 @@
+@import "../../Utils/_variables.scss";
+
+.PrimaryButton, .PrimaryButton:first-of-type, 
+.PrimaryButton:last-of-type, 
+.PrimaryButton:first-of-type button,
+.PrimaryButton:last-of-type button {
+    padding: 3.3px;
+    border-radius: $BorderRadius;
+}
+
+.PrimaryButton button {
+    font-size: 1.125rem;
+    border-radius: calc(#{$BorderRadius} - 2px) !important;
+}

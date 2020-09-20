@@ -1,0 +1,82 @@
+@import "../../Utils/_variables.scss";
+
+.RangeSlider {
+    width: 100%;
+    position: relative;
+}
+
+.Range {
+    position: absolute;
+    height: 10px;
+    left: 2px;
+    top: 2px;
+    border: 2px solid $ButtonBorderColor;
+    border-radius: $BorderRadius 0 0 $BorderRadius;
+    background: linear-gradient(to right, $AccentGradientEnd, $AccentGradientStart);
+}
+
+.RangeSlider input {
+    appearance: none;
+    pointer-events: none;
+    width: 100%;
+    height: 10px;
+    border: 2px solid $ButtonBorderColor;
+    border-radius: $BorderRadius;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+    background: $ButtonColor;
+}
+.RangeSlider input::-webkit-slider-thumb {
+    cursor: pointer;
+    appearance: none;
+    pointer-events: all;
+    position: relative;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 4px solid $AccentGradientEnd;
+    border-radius: 50%;
+    box-sizing: content-box;
+    overflow: hidden;
+    border: 0.8px solid transparent;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    background: $TextColor;
+    background: radial-gradient(circle, $TextColor 0%, $TextColor 55%, transparent 60%), 
+        $AccentGradientReverse;
+    background-origin: padding-box, border-box;
+    background-repeat: no-repeat;
+    transition: transform 0.15s ease-in-out;
+}
+.RangeSlider input::-webkit-slider-thumb:hover {
+    transform: scale(1.25);
+}
+.RangeSlider input::-webkit-slider-runnable-track {
+    z-index: 1;
+}
+.RangeSlider input:focus {
+    outline: none;
+}
+
+.ToolTip {
+    position: absolute;
+    width: 3.75rem;
+    height: 2rem;
+    bottom: calc(100% + 10px);
+    line-height: 2rem;
+    text-align: center;
+    border-radius: $BorderRadius $BorderRadius 0 0;
+    box-shadow: 0px 0px 3px transparentize($color: $AccentGradientEnd, $amount: 0.4), 0px 0px 10px rgba(0, 0, 0, 0.5);
+    color: $TextColor;
+    background: #000;
+    z-index: 2;
+    transform: scale(0);
+    transform-origin: bottom;
+}
+
+@keyframes ToolTipScaleIn {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+@keyframes ToolTipScaleOut {
+    from {transform: scale(1)}
+    to {transform: scale(0)}
+}
+
