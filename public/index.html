@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="theme-color" content="#000000"/>
         <meta name="description" content="Project 1: Sorting Algorithms"/>
-        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+        <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">  -->
         <link rel="manifest" href="%PUBLIC_URL%/manifest.json"/>
         <link href="https://fonts.googleapis.com/css2?family=Kulim+Park:wght@600;700&display=swap" rel="stylesheet">
         <title>Sorting Algorithm Project</title>
@@ -14,5 +14,14 @@
     <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>
         <div id="root"></div>
+
+        <script>
+            if (window.location.protocol.indexOf('https') == 0){
+                var el = document.createElement('meta')
+                el.setAttribute('http-equiv', 'Content-Security-Policy')
+                el.setAttribute('content', 'upgrade-insecure-requests')
+                document.head.append(el)
+            }
+        </script>
     </body>
 </html>
