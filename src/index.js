@@ -8,7 +8,7 @@ import * as serviceWorker from "./serviceWorker";
 
 import "./index.css";
 
-const URI = window.location.protocol.indexOf('https') == 0 ? "http://algorithms-project-one-api.herokuapp.com/graphql" : "http://localhost:8080/graphql";
+const URI = window.location.protocol.indexOf('https') === 0 ? "http://algorithms-project-one-api.herokuapp.com/graphql" : "http://localhost:8080/graphql";
 
 const Client = new ApolloClient({uri: URI, cache: new InMemoryCache()});
 
