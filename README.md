@@ -3,6 +3,8 @@ I created a Java API that runs various sorting algorithms that a user selects. O
 
 The API is deployed to Heroku, while the Fontend is deployed to Github pages. Here is the link: https://michietuts.github.io/AlgorithmsProjectOne/
 
+*When you are done using the site, please reset the leader board by CTRL clicking the close button on the leader board modal*
+
 ### Installation
 - To run the API on your local machine, download the code posted to elearning
     - In your favorite terminal type **gradlew bootRun** (or **gradle bootRun** for Unix/Linux machines)
