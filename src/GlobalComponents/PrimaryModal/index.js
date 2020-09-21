@@ -7,15 +7,15 @@ function PrimaryModal(props) {
     const Overlay = React.useRef(null);
     const Modal = React.useRef(null);
 
-    const CloseModal = (action) => {
+    const CloseModal = (e) => {
         if(!Overlay.current || !Modal.current) return;
+        e.persist();
 
         const OverlayClose = () => {
-            typeof action === "function" && action();
-            AnimateModal(Overlay.current, () => props.CloseCallback(), "OverlayFadeOut")            
+            AnimateModal(Overlay.current, () => props.CloseCallback(props.PassCloseEvent ? e : null), "OverlayFadeOut");
         }
 
-        AnimateModal(Modal.current, OverlayClose, "ModalFadeOut")
+        AnimateModal(Modal.current, OverlayClose, "ModalFadeOut");
     }
 
     return (

@@ -1,5 +1,5 @@
 import React from "react";
-import { gql, useLazyQuery } from '@apollo/client';
+import { gql, useLazyQuery, useMutation} from '@apollo/client';
 import { UseSortingAlgorithmDataContext } from "../../Context/SortingAlgorithmContext";
 import { UseNotificationContext } from "../../GlobalComponents/Notification/NotificationContext";
 
@@ -18,6 +18,11 @@ const GET_LEADER_BOARD_STATS = gql`
             movements {algorithm movements size}
             time {algorithm time size}
         }
+    }
+`;
+const RESET_LEADER_BOARD = gql`
+    mutation ResetLeaderBoard {
+        ResetLeaderBoard
     }
 `;
 
@@ -50,12 +55,25 @@ function LeaderBoard({setShowLeaderBoard}) {
         }
     });
 
+    const [ResetLeaderBoard] = useMutation(RESET_LEADER_BOARD, {errorPolicy: "all",  
+        onCompleted: () => PushNotification(
+            {type: "Success", title: `Leader Board Is Reset`, timeout: 4500}
+        ), onError: () => PushNotification(
+            {title: "Failed To Reset Leader Board", body: "Please Try Again Another Time", timeout: 4500}
+        )
+    });
+
+    const CloseLeaderBoard = (e) => {
+        e.ctrlKey && ResetLeaderBoard();
+        setShowLeaderBoard();
+    }
+
     React.useEffect(() => LoadLeaderBoardStats(), [LoadLeaderBoardStats]);
 
     return (
         <>
             {!ShowSpinner ?
-                <PrimaryModal CloseCallback={setShowLeaderBoard} HeaderTitle="Leader Board">
+                <PrimaryModal CloseCallback={CloseLeaderBoard} HeaderTitle="Leader Board" PassCloseEvent={true}>
                     <div className="LeaderBoardButtons DataTypes">
                         {DataTypes && DataTypes.map((Data, d) => (
                             <label  key={d} className="RadioButton">
