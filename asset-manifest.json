@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/AlgorithmsProjectOne/static/css/main.e5a8b48e.chunk.css",
+    "main.css": "/AlgorithmsProjectOne/static/css/main.998b8604.chunk.css",
     "main.js": "/AlgorithmsProjectOne/static/js/main.65c8c371.chunk.js",
     "main.js.map": "/AlgorithmsProjectOne/static/js/main.65c8c371.chunk.js.map",
     "runtime-main.js": "/AlgorithmsProjectOne/static/js/runtime-main.e5282bf1.js",
@@ -8,15 +8,15 @@
     "static/js/2.35eaca1c.chunk.js": "/AlgorithmsProjectOne/static/js/2.35eaca1c.chunk.js",
     "static/js/2.35eaca1c.chunk.js.map": "/AlgorithmsProjectOne/static/js/2.35eaca1c.chunk.js.map",
     "index.html": "/AlgorithmsProjectOne/index.html",
-    "precache-manifest.69f6ddc8cea5a3c03931a32aa6fcb4d9.js": "/AlgorithmsProjectOne/precache-manifest.69f6ddc8cea5a3c03931a32aa6fcb4d9.js",
+    "precache-manifest.909ac5bbe3726b44b103abe8fcb8f10d.js": "/AlgorithmsProjectOne/precache-manifest.909ac5bbe3726b44b103abe8fcb8f10d.js",
     "service-worker.js": "/AlgorithmsProjectOne/service-worker.js",
-    "static/css/main.e5a8b48e.chunk.css.map": "/AlgorithmsProjectOne/static/css/main.e5a8b48e.chunk.css.map",
+    "static/css/main.998b8604.chunk.css.map": "/AlgorithmsProjectOne/static/css/main.998b8604.chunk.css.map",
     "static/js/2.35eaca1c.chunk.js.LICENSE.txt": "/AlgorithmsProjectOne/static/js/2.35eaca1c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.e5282bf1.js",
     "static/js/2.35eaca1c.chunk.js",
-    "static/css/main.e5a8b48e.chunk.css",
+    "static/css/main.998b8604.chunk.css",
     "static/js/main.65c8c371.chunk.js"
   ]
 }
