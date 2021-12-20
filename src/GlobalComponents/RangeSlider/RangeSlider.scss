@@ -25,16 +25,37 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
     background: $ButtonColor;
 }
-.RangeSlider input::-webkit-slider-thumb {
+.RangeSlider input {
+    &::-webkit-slider-thumb {
+        appearance: none;
+        pointer-events: all;
+        position: relative;
+    }
+
+    &::-webkit-slider-runnable-track {
+        z-index: 1;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover ~ .RangeSliderThumb {
+        transform: scale(1.25);
+    }
+}
+.RangeSlider input::-webkit-slider-thumb, .RangeSlider .RangeSliderThumb {
     cursor: pointer;
-    appearance: none;
-    pointer-events: all;
-    position: relative;
     width: 1.25rem;
     height: 1.25rem;
+}
+.RangeSlider .RangeSliderThumb {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
     border: 4px solid $AccentGradientEnd;
     border-radius: 50%;
-    box-sizing: content-box;
+    box-sizing: border-box;
     overflow: hidden;
     border: 0.8px solid transparent;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
@@ -44,15 +65,6 @@
     background-origin: padding-box, border-box;
     background-repeat: no-repeat;
     transition: transform 0.15s ease-in-out;
-}
-.RangeSlider input::-webkit-slider-thumb:hover {
-    transform: scale(1.25);
-}
-.RangeSlider input::-webkit-slider-runnable-track {
-    z-index: 1;
-}
-.RangeSlider input:focus {
-    outline: none;
 }
 
 .ToolTip {

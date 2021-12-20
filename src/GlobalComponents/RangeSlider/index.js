@@ -22,6 +22,10 @@ function RangeSlider({min, max, step = 1, value, onChange, onMouseLeave}) {
                     borderRightColor: value === max ? "transparent" : null
                 }}
             />
+            
+            <div className="RangeSliderThumb" style={{
+                left: `calc(${(value - min)/(max - min)} * (100% - 1.25rem / 2))`
+            }}></div>
 
             <div className="ToolTip" style={{
                 left: `calc(${(value - min)/(max - min)} * (100% - 0.375 * 3.75rem) - 0.25 * 3.75rem)`,
